@@ -1,15 +1,16 @@
 /*
  * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
  * @Date: 2025-07-30 14:37:46
- * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2025-08-15 22:28:29
- * @FilePath: \KEIL-25002-LED-PROJECT\User\self_oled_model.h
+ * @LastEditors: FIGHB li839521927@gmail.com
+ * @LastEditTime: 2025-08-19 22:34:48
+ * @FilePath: \SMALL-WATCH-PROJECT-STM32F103C8T6\User\self_oled_model.h
  * @Description: 
  * 
  * Copyright (c) 2025 by ${git_name_email}, All Rights Reserved. 
  */
 #ifndef _SELF_OLED_MODEL_H_
 #define _SELF_OLED_MODEL_H_
+#include "main.h"
 #include <stdint.h>
 
 extern const uint8_t OLED_ASCII_F6x8[][6];
@@ -23,6 +24,7 @@ extern const uint8_t OLED_ASCII_F12x24[][36];
 
 typedef struct 
 {
+	uint8_t Data[32];				//字模数据
 	
 #ifdef OLED_CHARSET_UTF8			//定义字符集为UTF8
 	char Index[5];					//汉字索引，空间为5字节
@@ -32,7 +34,6 @@ typedef struct
 	char Index[3];					//汉字索引，空间为3字节
 #endif
 
-	uint8_t Data[32];				//字模数据
 } ChineseCell_t;
 extern const ChineseCell_t OLED_CF16x16[];  // chinese font
 
