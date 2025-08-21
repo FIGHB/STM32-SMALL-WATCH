@@ -21,6 +21,7 @@
 #include "self_delay.h"
 #include "self_key.h"
 #include "self_rtc.h"
+#include "self_system.h"
 
 extern volatile uint8_t g_u8Time4msCount;
 

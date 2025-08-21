@@ -745,6 +745,16 @@
               <FileType>5</FileType>
               <FilePath>.\User\self_rtc.h</FilePath>
             </File>
+            <File>
+              <FileName>self_system.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\self_system.c</FilePath>
+            </File>
+            <File>
+              <FileName>self_system.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\User\self_system.h</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

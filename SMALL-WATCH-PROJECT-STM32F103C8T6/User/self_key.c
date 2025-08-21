@@ -2,7 +2,7 @@
  * @Author: FIGHB li839521927@gmail.com
  * @Date: 2025-08-21 02:41:29
  * @LastEditors: FIGHB li839521927@gmail.com
- * @LastEditTime: 2025-08-21 03:49:02
+ * @LastEditTime: 2025-08-22 07:31:20
  * @FilePath: \SMALL-WATCH-PROJECT-STM32F103C8T6\User\self_key.c
  * @Description:
  *
@@ -152,7 +152,7 @@ void F_KeyValueHandler(void)
         switch (s_u32KeyUpValue)
         {
         case BIT0:
-            g_ShowNum = 1;
+            S_SYS.b_MenuOrSetIndex = ~S_SYS.b_MenuOrSetIndex;
             break;
         case BIT1:
             g_ShowNum = 2;

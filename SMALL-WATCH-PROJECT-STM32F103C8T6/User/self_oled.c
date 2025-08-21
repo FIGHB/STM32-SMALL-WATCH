@@ -152,7 +152,7 @@ void F_OLED_Set_Data(uint8_t pos_x, uint8_t pos_y, uint8_t width, uint8_t height
 			y = pos_y + i;
 			page = y / 8;
 			shift = y % 8;
-			if (x < 128 && page < 8)
+			if (x < OLED_MAX_WIDTH && page < 8)
 			{ // 越界判定
 				if (data_arr[j + i / 8 * width] & (0x01 << (i % 8)))
 				{ // 置1
@@ -162,6 +162,29 @@ void F_OLED_Set_Data(uint8_t pos_x, uint8_t pos_y, uint8_t width, uint8_t height
 				{ // 置0
 					g_OLED_Disp_Arr[page][x] &= ~(0x01 << (shift));
 				}
+			}
+		}
+	}
+}
+
+/**
+ * @description: 	指定区域反向显示，背景高亮，显示内容置0
+ * @param {uint8_t} x	显示内容左上角 x 轴坐标
+ * @param {uint8_t} y	显示内容左上角 y 轴坐标
+ * @param {uint8_t} width	反向区域宽度
+ * @param {uint8_t} height	反向区域高度
+ * @return {*}
+ */
+void F_OLED_ChooseAreaReverse(uint8_t x, uint8_t y, uint8_t width, uint8_t height)
+{
+	int i=0,j=0;
+	for(i = x; i < x+width; i++)
+	{
+		for(j = y; j < y+height; j++)
+		{
+			if (i >= 0 && i < OLED_MAX_WIDTH && j >=0 && j < OLED_MAX_HEIGHT)			//超出屏幕的内容不显示
+			{
+				g_OLED_Disp_Arr[j / 8][i] ^= 0x01 << (j % 8);	//将显存数组指定数据取反
 			}
 		}
 	}

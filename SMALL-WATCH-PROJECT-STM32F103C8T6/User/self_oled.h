@@ -1,9 +1,9 @@
 /*
  * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
  * @Date: 2025-07-30 10:40:16
- * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2025-08-19 06:00:05
- * @FilePath: \KEIL-25002-LED-PROJECT\User\self_oled.h
+ * @LastEditors: FIGHB li839521927@gmail.com
+ * @LastEditTime: 2025-08-22 07:19:17
+ * @FilePath: \SMALL-WATCH-PROJECT-STM32F103C8T6\User\self_oled.h
  * @Description: 
  * 
  * Copyright (c) 2025 by ${git_name_email}, All Rights Reserved. 
@@ -34,6 +34,9 @@
 #define PIN_SDA_GPIO_Pin_X              GPIO_Pin_9
 #define PIN_SDA_GPIOX                   GPIOB
 
+#define OLED_MAX_WIDTH  128
+#define OLED_MAX_HEIGHT 64
+
 extern unsigned char g_OLED_Disp_Arr[8][128];
 void F_OLED_Init(void);
 void F_OLED_Clear(void);
@@ -43,6 +46,7 @@ void f_oledShowString(unsigned char x, unsigned char y, unsigned char width, uns
 void f_OLED_ShowChar(unsigned char x, unsigned char y, unsigned char width, unsigned char height, unsigned char u8_char);
 void f_oled_ShowHexString(uint8_t x, uint8_t y, uint8_t width, uint8_t height, const char *int8_str);
 void f_oledPrintf(unsigned char x, unsigned char y, unsigned char width, unsigned char height, char *str, ...);
+void F_OLED_ChooseAreaReverse(uint8_t x, uint8_t y, uint8_t width, uint8_t height);
 
 
 
