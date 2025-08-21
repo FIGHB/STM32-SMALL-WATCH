@@ -735,6 +735,16 @@
               <FileType>5</FileType>
               <FilePath>.\User\self_key.h</FilePath>
             </File>
+            <File>
+              <FileName>self_rtc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\self_rtc.c</FilePath>
+            </File>
+            <File>
+              <FileName>self_rtc.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\User\self_rtc.h</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
