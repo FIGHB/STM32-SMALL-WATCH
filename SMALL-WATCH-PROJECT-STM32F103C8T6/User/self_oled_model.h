@@ -2,7 +2,7 @@
  * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
  * @Date: 2025-07-30 14:37:46
  * @LastEditors: FIGHB li839521927@gmail.com
- * @LastEditTime: 2025-08-19 22:34:48
+ * @LastEditTime: 2025-08-26 23:01:31
  * @FilePath: \SMALL-WATCH-PROJECT-STM32F103C8T6\User\self_oled_model.h
  * @Description: 
  * 
@@ -36,5 +36,6 @@ typedef struct
 
 } ChineseCell_t;
 extern const ChineseCell_t OLED_CF16x16[];  // chinese font
+extern const uint8_t Frame44X44[];
 
 #endif

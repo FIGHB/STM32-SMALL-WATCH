@@ -46,7 +46,7 @@ void f_oledShowString(unsigned char x, unsigned char y, unsigned char width, uns
 void f_OLED_ShowChar(unsigned char x, unsigned char y, unsigned char width, unsigned char height, unsigned char u8_char);
 void f_oled_ShowHexString(uint8_t x, uint8_t y, uint8_t width, uint8_t height, const char *int8_str);
 void f_oledPrintf(unsigned char x, unsigned char y, unsigned char width, unsigned char height, char *str, ...);
-void F_OLED_ChooseAreaReverse(uint8_t x, uint8_t y, uint8_t width, uint8_t height);
+void F_OLED_ChooseAreaReverse(uint8_t x, uint8_t y, uint8_t width, uint8_t height);  
 
 
 
