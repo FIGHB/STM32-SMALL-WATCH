@@ -41,7 +41,7 @@ extern unsigned char g_OLED_Disp_Arr[8][128];
 void F_OLED_Init(void);
 void F_OLED_Clear(void);
 void F_OLED_Disp_Update(void);
-void F_OLED_Set_Data(uint8_t pos_x, uint8_t pos_y,uint8_t width, uint8_t height,const uint8_t *data_arr);
+void F_OLED_Show_Graph(uint8_t pos_x, uint8_t pos_y,uint8_t width, uint8_t height,const uint8_t *data_arr);
 void f_oledShowString(unsigned char x, unsigned char y, unsigned char width, unsigned char height, const char *str);
 void f_OLED_ShowChar(unsigned char x, unsigned char y, unsigned char width, unsigned char height, unsigned char u8_char);
 void f_oled_ShowHexString(uint8_t x, uint8_t y, uint8_t width, uint8_t height, const char *int8_str);

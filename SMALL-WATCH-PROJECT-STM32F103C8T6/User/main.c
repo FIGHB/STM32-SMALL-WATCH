@@ -19,13 +19,13 @@ int main(void)
 	F_KeyInit();
 	F_RTCInit();
 	F_OLED_Init();
-	// F_OLED_Set_Data(0,30,16,16,OLED_CF16x16[2].Data);
+	// F_OLED_Show_Graph(0,30,16,16,OLED_CF16x16[2].Data);
 	// F_showClockUI();
 	// f_OLED_ShowChar(0,0,6,8, '#');
 	// f_oledPrintf(16,16,8,16,"Äã");
 	// f_oledShowString(16,16,8,16, "ÄãºÃºÃ½ç");
 
-	// F_OLED_Set_Data(0,0,16,16,OLED_CF16x16[4].Data);
+	// F_OLED_Show_Graph(0,0,16,16,OLED_CF16x16[4].Data);
 	// f_oledPrintf(12,0,6,8,"%d-%d-%d",21,22,23);
 	// f_OLED_ShowChar(12, 0, 6, 8, '?');
 	F_OLED_Disp_Update();

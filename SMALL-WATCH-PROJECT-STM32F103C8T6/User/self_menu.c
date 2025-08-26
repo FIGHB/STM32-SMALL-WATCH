@@ -2,7 +2,7 @@
  * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
  * @Date: 2025-08-15 20:40:53
  * @LastEditors: FIGHB li839521927@gmail.com
- * @LastEditTime: 2025-08-26 23:56:03
+ * @LastEditTime: 2025-08-27 07:25:57
  * @FilePath: \SMALL-WATCH-PROJECT-STM32F103C8T6\User\self_menu.c
  * @Description:
  *
@@ -64,7 +64,7 @@ void f_OLEDShowMainPage()
 
 void f_OLED_ShowMenuFrame()
 {
-    F_OLED_Set_Data(42,10,44,44,Frame44X44);
+    F_OLED_Show_Graph(42,10,44,44,Frame44X44);
 }
 
 /**
@@ -73,7 +73,19 @@ void f_OLED_ShowMenuFrame()
  */
 void f_OLED_ShowMenuContant()
 {
+    static unsigned char s_IndexPre = 1;
+    static unsigned char s_IndexLast = 1;
+    s_IndexPre = S_SYS.menuChooseIndex;
     f_OLED_ShowMenuFrame();
+    if(s_IndexPre>0)
+    {
+        F_OLED_Show_Graph(5,16,32,32,OLED_GRAPH_F32X32[s_IndexPre-1]);
+    }
+    F_OLED_Show_Graph(48,16,32,32,OLED_GRAPH_F32X32[s_IndexPre]);
+    if(s_IndexPre < LIMIT_MENU_INDEX_MAX-1)
+    {
+        F_OLED_Show_Graph(96,16,32,32,OLED_GRAPH_F32X32[s_IndexPre+1]);
+    }
 }
 
 void f_OLEDShowMenu()

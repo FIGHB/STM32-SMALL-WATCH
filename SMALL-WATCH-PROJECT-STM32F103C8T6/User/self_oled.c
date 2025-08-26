@@ -138,7 +138,7 @@ void F_OLED_Disp_Update(void)
  * @param {uint8_t} *data_arr 显示的数据，按照行列式 排列，第一个字节代表左上角第一列8个点，第二个字节代表第二列前8个点
  * @return {*}
  */
-void F_OLED_Set_Data(uint8_t pos_x, uint8_t pos_y, uint8_t width, uint8_t height, const uint8_t *data_arr)
+void F_OLED_Show_Graph(uint8_t pos_x, uint8_t pos_y, uint8_t width, uint8_t height, const uint8_t *data_arr)
 {
 	unsigned int i;
 	uint8_t j, x, y, page, shift;
@@ -241,15 +241,15 @@ void f_OLED_ShowChar(unsigned char x, unsigned char y, unsigned char width, unsi
 {
 	if (width == 6)
 	{
-		F_OLED_Set_Data(x, y, 6, 8, OLED_ASCII_F6x8[u8_char - ' ']);
+		F_OLED_Show_Graph(x, y, 6, 8, OLED_ASCII_F6x8[u8_char - ' ']);
 	}
 	else if (width == 8)
 	{
-		F_OLED_Set_Data(x, y, 8, 16, OLED_ASCII_F8x16[u8_char - ' ']);
+		F_OLED_Show_Graph(x, y, 8, 16, OLED_ASCII_F8x16[u8_char - ' ']);
 	}
 	else if (width == 12)
 	{
-		F_OLED_Set_Data(x, y, 12, 24, OLED_ASCII_F12x24[u8_char - ' ']);
+		F_OLED_Show_Graph(x, y, 12, 24, OLED_ASCII_F12x24[u8_char - ' ']);
 	}
 	return;
 }
@@ -384,7 +384,7 @@ void f_oledShowString(unsigned char x, unsigned char y, unsigned char width, uns
 			}
 			if (height == 16)
 			{
-				F_OLED_Set_Data(xOffSet, y, 16, 16, OLED_CF16x16[index_CF].Data);
+				F_OLED_Show_Graph(xOffSet, y, 16, 16, OLED_CF16x16[index_CF].Data);
 				xOffSet += 16;
 			}
 			else
