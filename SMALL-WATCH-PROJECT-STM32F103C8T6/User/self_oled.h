@@ -2,7 +2,7 @@
  * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
  * @Date: 2025-07-30 10:40:16
  * @LastEditors: FIGHB li839521927@gmail.com
- * @LastEditTime: 2025-08-22 07:19:17
+ * @LastEditTime: 2025-08-27 19:29:36
  * @FilePath: \SMALL-WATCH-PROJECT-STM32F103C8T6\User\self_oled.h
  * @Description: 
  * 
@@ -41,7 +41,7 @@ extern unsigned char g_OLED_Disp_Arr[8][128];
 void F_OLED_Init(void);
 void F_OLED_Clear(void);
 void F_OLED_Disp_Update(void);
-void F_OLED_Show_Graph(uint8_t pos_x, uint8_t pos_y,uint8_t width, uint8_t height,const uint8_t *data_arr);
+void F_OLED_Show_Graph(int16_t pos_x, int16_t pos_y, int16_t width, int16_t height, const uint8_t *data_arr);
 void f_oledShowString(unsigned char x, unsigned char y, unsigned char width, unsigned char height, const char *str);
 void f_OLED_ShowChar(unsigned char x, unsigned char y, unsigned char width, unsigned char height, unsigned char u8_char);
 void f_oled_ShowHexString(uint8_t x, uint8_t y, uint8_t width, uint8_t height, const char *int8_str);

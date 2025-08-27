@@ -138,10 +138,10 @@ void F_OLED_Disp_Update(void)
  * @param {uint8_t} *data_arr 显示的数据，按照行列式 排列，第一个字节代表左上角第一列8个点，第二个字节代表第二列前8个点
  * @return {*}
  */
-void F_OLED_Show_Graph(uint8_t pos_x, uint8_t pos_y, uint8_t width, uint8_t height, const uint8_t *data_arr)
+void F_OLED_Show_Graph(int16_t pos_x, int16_t pos_y, int16_t width, int16_t height, const uint8_t *data_arr)
 {
-	unsigned int i;
-	uint8_t j, x, y, page, shift;
+	unsigned int i=0;
+	int16_t j=0, x=0, y=0, page=0, shift=0;
 	// 将对应字模数据设置到相应数据点上
 	j = 0;
 	for (i = 0; i < height; i++)
@@ -150,9 +150,13 @@ void F_OLED_Show_Graph(uint8_t pos_x, uint8_t pos_y, uint8_t width, uint8_t heig
 		{
 			x = pos_x + j;
 			y = pos_y + i;
+			if(x<0 || y<0)
+			{
+				continue;
+			}
 			page = y / 8;
 			shift = y % 8;
-			if (x < OLED_MAX_WIDTH && page < 8)
+			if (x>=0 && x < OLED_MAX_WIDTH && page < 8)
 			{ // 越界判定
 				if (data_arr[j + i / 8 * width] & (0x01 << (i % 8)))
 				{ // 置1

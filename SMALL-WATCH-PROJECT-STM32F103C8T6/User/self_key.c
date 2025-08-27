@@ -2,8 +2,8 @@
  * @Author: FIGHB li839521927@gmail.com
  * @Date: 2025-08-21 02:41:29
  * @LastEditors: FIGHB li839521927@gmail.com
- * @LastEditTime: 2025-08-23 04:03:24
- * @FilePath: \SMALL-WATCH-PROJECT-STM32F103C8T6\User\self_key.c
+ * @LastEditTime: 2025-08-27 21:45:02
+ * @FilePath: \PROJECT-SMALL-WATCH\SMALL-WATCH-PROJECT-STM32F103C8T6\User\self_key.c
  * @Description:
  *
  * Copyright (c) 2025 by ${git_name_email}, All Rights Reserved.
@@ -51,15 +51,17 @@ uint8_t F_KeyValueScan(void)
     else
     {
         s_u8KeyValueLast = l_u8KeyValue;
-        s_u8KeyValueRet = 0;
+        s_u8SameCount = 0;
     }
     return s_u8KeyValueRet;
 }
 
 uint8_t g_ShowNum = 12;
-#define C_KEY_DOWN_TIME_20MS    5
-#define C_KEY_DOWN_TIME_1000MS  250
-#define C_KEY_DOWN_TIME_3000MS  750
+#define C_KEY_DOWN_TIME_20MS 5
+#define C_KEY_DOWN_TIME_100MS 25
+#define C_KEY_DOWN_TIME_500MS 125
+#define C_KEY_DOWN_TIME_1000MS 250
+#define C_KEY_DOWN_TIME_3000MS 750
 void F_KeyValueHandler(void)
 {
     unsigned int l_u32KeyValuePre = 0;
@@ -68,7 +70,7 @@ void F_KeyValueHandler(void)
 
     if (s_u32KeyValueLast == l_u32KeyValuePre)
     {
-        if(s_u32SameCount<65536)
+        if (s_u32SameCount < 65536)
         {
             s_u32SameCount++;
         }
@@ -86,12 +88,12 @@ void F_KeyValueHandler(void)
             s_u32KeyUpValue = s_u32KeyValueLast;
         }
 
-        if(C_KEY_DOWN_TIME_20MS == s_u32SameCount)
+        if (C_KEY_DOWN_TIME_20MS == s_u32SameCount)
         {
             switch (s_u32KeyValueLast)
             {
                 // code
-            
+
             default:
                 break;
             }
@@ -102,18 +104,20 @@ void F_KeyValueHandler(void)
             switch (s_u32KeyValueLast)
             {
             case BIT0:
-                /* code */
-                g_ShowNum = 11;
+                g_ShowNum = 10;
+                F_ChooseHandleR();
+                s_u32SameCount -= C_KEY_DOWN_TIME_100MS;
                 s_u32KeyUpValue = 0;
                 break;
             case BIT1:
                 /* code */
-                g_ShowNum = 12;
+                g_ShowNum = 11;
                 s_u32KeyUpValue = 0;
                 break;
             case BIT2:
-                /* code */
-                g_ShowNum = 13;
+                g_ShowNum = 12;
+                F_ChooseHandleL();
+                s_u32SameCount -= C_KEY_DOWN_TIME_100MS;
                 s_u32KeyUpValue = 0;
                 break;
 
@@ -127,18 +131,16 @@ void F_KeyValueHandler(void)
             switch (s_u32KeyValueLast)
             {
             case BIT0:
-                /* code */
-                g_ShowNum = 31;
+                g_ShowNum = 30;
                 s_u32KeyUpValue = 0;
                 break;
             case BIT1:
                 /* code */
-                g_ShowNum = 32;
+                g_ShowNum = 31;
                 s_u32KeyUpValue = 0;
                 break;
             case BIT2:
-                /* code */
-                g_ShowNum = 33;
+                g_ShowNum = 32;
                 s_u32KeyUpValue = 0;
                 break;
 
@@ -151,14 +153,17 @@ void F_KeyValueHandler(void)
     {
         switch (s_u32KeyUpValue)
         {
-        case BIT0:
-            F_ChooseHandle();
+        case BIT0: // R
+            g_ShowNum = 00;
+            F_ChooseHandleR();
             break;
-        case BIT1:
+        case BIT1: // ENTER
+            g_ShowNum = 01;
             F_MakeSureHandle();
             break;
-        case BIT2:
-            g_ShowNum = 3;
+        case BIT2: // L
+            g_ShowNum = 02;
+            F_ChooseHandleL();
             break;
 
         default:
