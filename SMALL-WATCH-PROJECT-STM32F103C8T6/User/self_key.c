@@ -92,8 +92,6 @@ void F_KeyValueHandler(void)
         {
             switch (s_u32KeyValueLast)
             {
-                // code
-
             default:
                 break;
             }

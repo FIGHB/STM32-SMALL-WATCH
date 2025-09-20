@@ -2,8 +2,8 @@
  * @Author: FIGHB li839521927@gmail.com
  * @Date: 2025-08-22 07:23:15
  * @LastEditors: FIGHB li839521927@gmail.com
- * @LastEditTime: 2025-08-27 20:02:57
- * @FilePath: \SMALL-WATCH-PROJECT-STM32F103C8T6\User\self_system.h
+ * @LastEditTime: 2025-09-21 05:11:21
+ * @FilePath: \PROJECT-SMALL-WATCH\SMALL-WATCH-PROJECT-STM32F103C8T6\User\self_system.h
  * @Description: 
  * 
  * Copyright (c) 2025 by ${git_name_email}, All Rights Reserved. 
@@ -21,8 +21,9 @@
 struct self_system
 {
     unsigned b_MenuOrSetIndex:1;
-    unsigned char menuDepth;    // 首页默认菜单深度为0
-    unsigned char menuChooseIndex;    // 当前选中的菜单索引
+    unsigned char menuDepth;    // 首页默认菜单深度为0  一级索引
+    unsigned char menuChooseIndex;    // 当前选中的菜单索引 二级索引
+    unsigned char menuFunctionIndex;    // 当前选中的功能索引   三级索引
 };
 
 extern struct self_system S_SYS;
