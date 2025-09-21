@@ -316,7 +316,7 @@
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
             <Strict>0</Strict>
-            <EnumInt>0</EnumInt>
+            <EnumInt>1</EnumInt>
             <PlainCh>0</PlainCh>
             <Ropi>0</Ropi>
             <Rwpi>0</Rwpi>
@@ -696,16 +696,6 @@
               <FilePath>.\User\self_oled_model.h</FilePath>
             </File>
             <File>
-              <FileName>self_menu.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\User\self_menu.c</FilePath>
-            </File>
-            <File>
-              <FileName>self_menu.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\User\self_menu.h</FilePath>
-            </File>
-            <File>
               <FileName>self_delay.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\User\self_delay.c</FilePath>
@@ -754,6 +744,66 @@
               <FileName>self_system.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\User\self_system.h</FilePath>
+            </File>
+            <File>
+              <FileName>page_time_counter.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\page_time_counter.c</FilePath>
+            </File>
+            <File>
+              <FileName>page_time_counter.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\User\page_time_counter.h</FilePath>
+            </File>
+            <File>
+              <FileName>page_home_page.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\page_home_page.c</FilePath>
+            </File>
+            <File>
+              <FileName>page_home_page.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\User\page_home_page.h</FilePath>
+            </File>
+            <File>
+              <FileName>page_menu.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\page_menu.c</FilePath>
+            </File>
+            <File>
+              <FileName>page_menu.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\User\page_menu.h</FilePath>
+            </File>
+            <File>
+              <FileName>page_setting.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\page_setting.c</FilePath>
+            </File>
+            <File>
+              <FileName>page_setting.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\User\page_setting.h</FilePath>
+            </File>
+            <File>
+              <FileName>self_display.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\self_display.c</FilePath>
+            </File>
+            <File>
+              <FileName>self_display.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\User\self_display.h</FilePath>
+            </File>
+            <File>
+              <FileName>page_date_setting.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\page_date_setting.c</FilePath>
+            </File>
+            <File>
+              <FileName>page_date_setting.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\User\page_date_setting.h</FilePath>
             </File>
           </Files>
         </Group>

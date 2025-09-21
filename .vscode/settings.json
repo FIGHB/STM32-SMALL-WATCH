@@ -1,6 +1,9 @@
 {
     "files.associations": {
         "main.h": "c",
-        "self_key.h": "c"
+        "self_key.h": "c",
+        "page_menu.h": "c",
+        "page_setting.h": "c",
+        "page_home_page.h": "c"
     }
 }

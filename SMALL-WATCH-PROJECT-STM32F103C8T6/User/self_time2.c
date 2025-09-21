@@ -1,3 +1,13 @@
+/*
+ * @Author: FIGHB li839521927@gmail.com
+ * @Date: 2025-08-19 21:00:21
+ * @LastEditors: FIGHB li839521927@gmail.com
+ * @LastEditTime: 2025-09-21 19:21:20
+ * @FilePath: \SMALL-WATCH-PROJECT-STM32F103C8T6\User\self_time2.c
+ * @Description: 
+ * 
+ * Copyright (c) 2025 by ${git_name_email}, All Rights Reserved. 
+ */
 #include "self_time2.h"
 /**
  * @description: TO START time 2 clock
@@ -11,7 +21,7 @@ void F_timer2Init(void)
 	
 	/*setting the default clock source*/
 	TIM_InternalClockConfig(TIM2);		//选择TIM2为内部时钟，若不调用此函数，TIM默认也为内部时钟
-	
+
 	/*init*/
 	TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStructure;				//base setting struct
 	TIM_TimeBaseInitStructure.TIM_ClockDivision = TIM_CKD_DIV1;		//clock frequency default division

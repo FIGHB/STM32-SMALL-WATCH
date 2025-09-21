@@ -8,7 +8,18 @@
         "self_delay.h": "c",
         "stm32f10x.h": "c",
         "self_key.h": "c",
-        "self_system.h": "c"
+        "self_system.h": "c",
+        "limits": "c",
+        "memory": "c",
+        "atomic": "c",
+        "compare": "c",
+        "cstddef": "c",
+        "type_traits": "c",
+        "xmemory": "c",
+        "xstring": "c",
+        "xutility": "c",
+        "page_menu.h": "c",
+        "self_display.h": "c"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

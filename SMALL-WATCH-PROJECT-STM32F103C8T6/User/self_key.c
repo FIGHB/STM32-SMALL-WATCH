@@ -2,8 +2,8 @@
  * @Author: FIGHB li839521927@gmail.com
  * @Date: 2025-08-21 02:41:29
  * @LastEditors: FIGHB li839521927@gmail.com
- * @LastEditTime: 2025-08-27 21:45:02
- * @FilePath: \PROJECT-SMALL-WATCH\SMALL-WATCH-PROJECT-STM32F103C8T6\User\self_key.c
+ * @LastEditTime: 2025-09-21 21:26:12
+ * @FilePath: \SMALL-WATCH-PROJECT-STM32F103C8T6\User\self_key.c
  * @Description:
  *
  * Copyright (c) 2025 by ${git_name_email}, All Rights Reserved.
@@ -29,7 +29,7 @@ uint8_t F_KeyValueScan(void)
     static uint8_t s_u8KeyValueLast = 0, s_u8KeyValueRet = 0, s_u8SameCount = 0;
     if (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_8) == 0)
     {
-        l_u8KeyValue |= BIT0;
+        l_u8KeyValue |= BIT2;
     }
     if (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_11) == 0)
     {
@@ -37,7 +37,7 @@ uint8_t F_KeyValueScan(void)
     }
     if (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_15) == 0)
     {
-        l_u8KeyValue |= BIT2;
+        l_u8KeyValue |= BIT0;
     }
 
     if (s_u8KeyValueLast == l_u8KeyValue)
@@ -64,6 +64,7 @@ uint8_t g_ShowNum = 12;
 #define C_KEY_DOWN_TIME_3000MS 750
 void F_KeyValueHandler(void)
 {
+    enum e_ENUM_KEY_VALUE l_EffectiveKeyValue = ENUM_KEY_VALUE_NONE;
     unsigned int l_u32KeyValuePre = 0;
     static unsigned int s_u32KeyValueLast = 0, s_u32KeyUpValue = 0, s_u32SameCount = 0;
     l_u32KeyValuePre = F_KeyValueScan();
@@ -102,19 +103,17 @@ void F_KeyValueHandler(void)
             switch (s_u32KeyValueLast)
             {
             case BIT0:
-                g_ShowNum = 10;
-                F_ChooseHandleR();
+                l_EffectiveKeyValue = ENUM_KEY_VALUE_1S_00;
                 s_u32SameCount -= C_KEY_DOWN_TIME_100MS;
                 s_u32KeyUpValue = 0;
                 break;
             case BIT1:
                 /* code */
-                g_ShowNum = 11;
+                l_EffectiveKeyValue = ENUM_KEY_VALUE_1S_01;
                 s_u32KeyUpValue = 0;
                 break;
             case BIT2:
-                g_ShowNum = 12;
-                F_ChooseHandleL();
+                l_EffectiveKeyValue = ENUM_KEY_VALUE_1S_02;
                 s_u32SameCount -= C_KEY_DOWN_TIME_100MS;
                 s_u32KeyUpValue = 0;
                 break;
@@ -128,19 +127,6 @@ void F_KeyValueHandler(void)
         {
             switch (s_u32KeyValueLast)
             {
-            case BIT0:
-                g_ShowNum = 30;
-                s_u32KeyUpValue = 0;
-                break;
-            case BIT1:
-                /* code */
-                g_ShowNum = 31;
-                s_u32KeyUpValue = 0;
-                break;
-            case BIT2:
-                g_ShowNum = 32;
-                s_u32KeyUpValue = 0;
-                break;
 
             default:
                 break;
@@ -151,22 +137,41 @@ void F_KeyValueHandler(void)
     {
         switch (s_u32KeyUpValue)
         {
-        case BIT0: // R
-            g_ShowNum = 00;
-            F_ChooseHandleR();
-            break;
         case BIT1: // ENTER
-            g_ShowNum = 01;
-            F_MakeSureHandle();
+            l_EffectiveKeyValue = ENUM_KEY_VALUE_UP_01;
             break;
         case BIT2: // L
-            g_ShowNum = 02;
-            F_ChooseHandleL();
+            l_EffectiveKeyValue = ENUM_KEY_VALUE_UP_02;
+            break;
+        case BIT0: // R
+            l_EffectiveKeyValue = ENUM_KEY_VALUE_UP_00;
             break;
 
         default:
             break;
         }
         s_u32KeyUpValue = 0;
+    }
+
+    switch (S_SYS.renderPageIndex)
+    {
+    case PAGE_INDEX_HOMEPAGE:
+        F_HomePageKeyHandle((enum e_ENUM_KEY_VALUE)l_EffectiveKeyValue);
+        break;
+    case PAGE_INDEX_MENU:
+        F_MenuKeyHandle((enum e_ENUM_KEY_VALUE)l_EffectiveKeyValue);
+        break;
+    case PAGE_INDEX_SETTING:
+        F_SettingKeyHandle((enum e_ENUM_KEY_VALUE)l_EffectiveKeyValue);
+        break;
+    case PAGE_INDEX_TIME_COUNTER:
+        F_TimeCounterKeyHandle((enum e_ENUM_KEY_VALUE)l_EffectiveKeyValue);
+        break;
+    case PAGE_INDEX_DATE_SETTING:
+        F_dateSettingKeyHandle(l_EffectiveKeyValue);
+        break;
+    
+    default:
+        break;
     }
 }
