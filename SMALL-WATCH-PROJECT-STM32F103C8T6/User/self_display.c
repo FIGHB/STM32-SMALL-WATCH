@@ -1,8 +1,17 @@
+/*
+ * @Author: FIGHB li839521927@gmail.com
+ * @Date: 2025-09-21 05:47:24
+ * @LastEditors: FIGHB li839521927@gmail.com
+ * @LastEditTime: 2025-09-23 07:12:56
+ * @FilePath: \SMALL-WATCH-PROJECT-STM32F103C8T6\User\self_display.c
+ * @Description: 
+ * 
+ * Copyright (c) 2025 by ${git_name_email}, All Rights Reserved. 
+ */
 #include "self_display.h"
 
 void F_displayHandle()
 {
-    F_RTC_ReadTime();
     F_OLED_Clear();
     switch (S_SYS.renderPageIndex)
     {
@@ -24,6 +33,11 @@ void F_displayHandle()
     case PAGE_INDEX_TIME_COUNTER:
     {
         F_TimeCounterDisplayHandle();
+        break;
+    }
+    case PAGE_INDEX_DATE_SETTING:
+    {
+        F_dateSettingDisplayHandle();
         break;
     }
     default:

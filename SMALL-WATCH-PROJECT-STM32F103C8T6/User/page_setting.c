@@ -55,6 +55,8 @@ void F_SettingKeyHandle(uint32_t l_keyVal)
             S_SYS.renderPageIndex = PAGE_INDEX_HOMEPAGE;
             break;
         case SETTING_INDEX_DATE:
+            F_RTC_ReadTime();
+            S_SYS.renderPageIndex = PAGE_INDEX_DATE_SETTING;
             break;
         default:
             break;

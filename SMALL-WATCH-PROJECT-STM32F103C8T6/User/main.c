@@ -2,7 +2,7 @@
  * @Author: FIGHB li839521927@gmail.com
  * @Date: 2025-08-19 20:44:33
  * @LastEditors: FIGHB li839521927@gmail.com
- * @LastEditTime: 2025-09-21 20:50:33
+ * @LastEditTime: 2025-09-23 07:42:24
  * @FilePath: \SMALL-WATCH-PROJECT-STM32F103C8T6\User\main.c
  * @Description: to make a small watch by STM32F103C8T6
  *
@@ -47,7 +47,6 @@ int main(void)
 		if (g_u8Time1sCount >= 250)
 		{
 			g_u8Time1sCount -= 250;
-			
 		}
 	}
 }

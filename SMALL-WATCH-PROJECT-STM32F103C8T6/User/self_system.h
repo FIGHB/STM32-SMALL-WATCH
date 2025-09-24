@@ -2,7 +2,7 @@
  * @Author: FIGHB li839521927@gmail.com
  * @Date: 2025-08-22 07:23:15
  * @LastEditors: FIGHB li839521927@gmail.com
- * @LastEditTime: 2025-09-21 21:25:22
+ * @LastEditTime: 2025-09-23 07:38:10
  * @FilePath: \SMALL-WATCH-PROJECT-STM32F103C8T6\User\self_system.h
  * @Description: 
  * 

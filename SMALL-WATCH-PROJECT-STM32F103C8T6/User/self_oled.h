@@ -2,7 +2,7 @@
  * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
  * @Date: 2025-07-30 10:40:16
  * @LastEditors: FIGHB li839521927@gmail.com
- * @LastEditTime: 2025-08-27 19:29:36
+ * @LastEditTime: 2025-09-23 07:29:05
  * @FilePath: \SMALL-WATCH-PROJECT-STM32F103C8T6\User\self_oled.h
  * @Description: 
  * 
@@ -47,7 +47,7 @@ void f_OLED_ShowChar(unsigned char x, unsigned char y, unsigned char width, unsi
 void f_oled_ShowHexString(uint8_t x, uint8_t y, uint8_t width, uint8_t height, const char *int8_str);
 void f_oledPrintf(unsigned char x, unsigned char y, unsigned char width, unsigned char height, char *str, ...);
 void F_OLED_ChooseAreaReverse(uint8_t x, uint8_t y, uint8_t width, uint8_t height);  
-
+void F_OLED_ChooseAreaClean(uint8_t x, uint8_t y, uint8_t width, uint8_t height);
 
 
 #endif

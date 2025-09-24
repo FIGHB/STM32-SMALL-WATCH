@@ -2,7 +2,7 @@
  * @Author: FIGHB li839521927@gmail.com
  * @Date: 2025-09-21 05:42:10
  * @LastEditors: FIGHB li839521927@gmail.com
- * @LastEditTime: 2025-09-21 20:55:58
+ * @LastEditTime: 2025-09-23 07:42:44
  * @FilePath: \SMALL-WATCH-PROJECT-STM32F103C8T6\User\page_home_page.c
  * @Description: 
  * 
@@ -40,7 +40,6 @@ void f_OLEDShowMenuAndSetTextDown(unsigned char u8_chooseIndex)
  */
 void f_OLEDShowDateUp(void)
 {
-    F_RTC_ReadTime();
     f_oledPrintf(0, 0, 6, 8, "%4d-%02d-%02d", RTC_TimeArr[0], RTC_TimeArr[1], RTC_TimeArr[2]);
 }
 
@@ -110,6 +109,7 @@ void F_HomePageKeyHandle(uint32_t l_keyVal)
 
 void F_HomePageDisplayHandle(void)
 {
+    F_RTC_ReadTime();
     f_OLEDShowMainPage();
 }
 

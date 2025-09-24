@@ -194,6 +194,21 @@ void F_OLED_ChooseAreaReverse(uint8_t x, uint8_t y, uint8_t width, uint8_t heigh
 	}
 }
 
+void F_OLED_ChooseAreaClean(uint8_t x, uint8_t y, uint8_t width, uint8_t height)
+{
+	int i=0,j=0;
+	for(i = x; i < x+width; i++)
+	{
+		for(j = y; j < y+height; j++)
+		{
+			if (i >= 0 && i < OLED_MAX_WIDTH && j >=0 && j < OLED_MAX_HEIGHT)			//超出屏幕的内容不显示
+			{
+				g_OLED_Disp_Arr[j / 8][i] = 0;
+			}  
+		}
+	}
+}
+
 void F_OLED_Init()
 {
 	/*GPIO初始化*/
