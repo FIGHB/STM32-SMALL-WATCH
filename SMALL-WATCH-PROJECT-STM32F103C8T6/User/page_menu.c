@@ -2,7 +2,7 @@
  * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
  * @Date: 2025-08-15 20:40:53
  * @LastEditors: FIGHB li839521927@gmail.com
- * @LastEditTime: 2025-09-21 19:57:00
+ * @LastEditTime: 2025-09-28 06:06:38
  * @FilePath: \SMALL-WATCH-PROJECT-STM32F103C8T6\User\page_menu.c
  * @Description:
  *
@@ -133,12 +133,16 @@ void F_MenuKeyHandle(uint32_t l_keyVal)
         case 0:
         { // ÕÀªÿΩ®
             S_SYS.renderPageIndex = PAGE_INDEX_HOMEPAGE;
-            page1ChooseIndex = 0;
             break;
         }
         case 1:
         { // √Î±Ì
             S_SYS.renderPageIndex = PAGE_INDEX_TIME_COUNTER;
+            break;
+        }
+        case 3:
+        {
+            S_SYS.renderPageIndex = PAGE_INDEX_MPU_6050;
             break;
         }
         default:

@@ -805,6 +805,21 @@
               <FileType>5</FileType>
               <FilePath>.\User\page_date_setting.h</FilePath>
             </File>
+            <File>
+              <FileName>MPU6050.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\MPU6050.c</FilePath>
+            </File>
+            <File>
+              <FileName>MyI2C.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\MyI2C.c</FilePath>
+            </File>
+            <File>
+              <FileName>page_mpu_6050.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\page_mpu_6050.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

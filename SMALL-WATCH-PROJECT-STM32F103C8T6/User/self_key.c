@@ -2,7 +2,7 @@
  * @Author: FIGHB li839521927@gmail.com
  * @Date: 2025-08-21 02:41:29
  * @LastEditors: FIGHB li839521927@gmail.com
- * @LastEditTime: 2025-09-21 21:26:12
+ * @LastEditTime: 2025-09-28 06:04:41
  * @FilePath: \SMALL-WATCH-PROJECT-STM32F103C8T6\User\self_key.c
  * @Description:
  *
@@ -170,7 +170,9 @@ void F_KeyValueHandler(void)
     case PAGE_INDEX_DATE_SETTING:
         F_dateSettingKeyHandle(l_EffectiveKeyValue);
         break;
-    
+    case PAGE_INDEX_MPU_6050:
+        F_MPU6050KeyHandle(l_EffectiveKeyValue);
+        break;
     default:
         break;
     }

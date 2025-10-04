@@ -2,7 +2,7 @@
  * @Author: FIGHB li839521927@gmail.com
  * @Date: 2025-08-19 22:05:46
  * @LastEditors: FIGHB li839521927@gmail.com
- * @LastEditTime: 2025-09-21 21:27:37
+ * @LastEditTime: 2025-10-04 10:45:41
  * @FilePath: \SMALL-WATCH-PROJECT-STM32F103C8T6\User\main.h
  * @Description: 
  * 
@@ -36,6 +36,7 @@
 #include "page_menu.h"
 #include "page_setting.h"
 #include "page_date_setting.h"
+#include "page_mpu_6050.h"
 
 extern volatile uint8_t g_u8Time4msCount;
 

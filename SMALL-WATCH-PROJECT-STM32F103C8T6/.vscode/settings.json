@@ -19,7 +19,8 @@
         "xstring": "c",
         "xutility": "c",
         "page_menu.h": "c",
-        "self_display.h": "c"
+        "self_display.h": "c",
+        "stm32f10x_rcc.h": "c"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

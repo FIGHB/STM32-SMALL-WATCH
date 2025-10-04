@@ -2,7 +2,7 @@
  * @Author: FIGHB li839521927@gmail.com
  * @Date: 2025-08-22 07:23:15
  * @LastEditors: FIGHB li839521927@gmail.com
- * @LastEditTime: 2025-09-23 07:38:10
+ * @LastEditTime: 2025-09-28 06:01:25
  * @FilePath: \SMALL-WATCH-PROJECT-STM32F103C8T6\User\self_system.h
  * @Description: 
  * 
@@ -22,6 +22,7 @@ enum PAGE_INDEX
     PAGE_INDEX_SETTING,
     PAGE_INDEX_TIME_COUNTER,
     PAGE_INDEX_DATE_SETTING,
+    PAGE_INDEX_MPU_6050,
 };
 
 struct self_system

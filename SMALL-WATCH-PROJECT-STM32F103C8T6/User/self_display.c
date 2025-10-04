@@ -2,7 +2,7 @@
  * @Author: FIGHB li839521927@gmail.com
  * @Date: 2025-09-21 05:47:24
  * @LastEditors: FIGHB li839521927@gmail.com
- * @LastEditTime: 2025-09-23 07:12:56
+ * @LastEditTime: 2025-10-04 11:08:43
  * @FilePath: \SMALL-WATCH-PROJECT-STM32F103C8T6\User\self_display.c
  * @Description: 
  * 
@@ -38,6 +38,11 @@ void F_displayHandle()
     case PAGE_INDEX_DATE_SETTING:
     {
         F_dateSettingDisplayHandle();
+        break;
+    }
+    case PAGE_INDEX_MPU_6050:
+    {
+        F_MPU6050DisplayHandle();
         break;
     }
     default:
